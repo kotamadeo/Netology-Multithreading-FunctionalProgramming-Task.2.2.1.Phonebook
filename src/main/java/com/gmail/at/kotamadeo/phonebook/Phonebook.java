@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -17,7 +16,7 @@ public class Phonebook {
     private String name;
     private final Map<String, String> numbers = new HashMap<>();
 
-    public int putNumberToPhoneBook(String name, String number) {
+    public int putContactToPhonebook(String name, String number) {
         numbers.putIfAbsent(name, number);
         return numbers.size();
     }

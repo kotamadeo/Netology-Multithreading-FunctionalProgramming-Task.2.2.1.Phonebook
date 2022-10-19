@@ -12,13 +12,13 @@ class PhonebookTest {
 
     @BeforeAll
     static void init() {
-        PHONEBOOK.putNumberToPhoneBook("Ivan", "12345678910");
-        PHONEBOOK.putNumberToPhoneBook("Anna", "54544554545");
-        PHONEBOOK.putNumberToPhoneBook("Ivan", "10203040505");
+        PHONEBOOK.putContactToPhonebook("Ivan", "12345678910");
+        PHONEBOOK.putContactToPhonebook("Anna", "54544554545");
+        PHONEBOOK.putContactToPhonebook("Ivan", "10203040505");
     }
 
     @Test
-    void putNumberToPhoneBook() {
+    void putContactToPhonebook() {
         assertEquals(SIZE, PHONEBOOK.getNumbers().size(), "Произошла ошибка добавления номера в телефонную книгу");
     }
 
