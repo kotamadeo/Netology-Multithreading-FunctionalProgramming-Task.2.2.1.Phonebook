@@ -43,4 +43,9 @@ public class Phonebook {
                 .map(Objects::toString)
                 .collect(Collectors.joining(", "));
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s:%n%s", name, printAllNames());
+    }
 }

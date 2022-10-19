@@ -11,7 +11,6 @@ public class Main {
         System.out.println(phonebook.getNumbers().size() == 2);
         System.out.println(phonebook.findByName("Жанна"));
         System.out.println(phonebook.findByNumber("89125205403"));
-        System.out.println(phonebook.printAllNames());
-
+        System.out.println(phonebook);
     }
 }
