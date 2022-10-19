@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Getter
@@ -33,5 +35,9 @@ public class Phonebook {
                 .filter(entry -> name.equals(entry.getKey()))
                 .map(Map.Entry::getValue)
                 .findFirst().orElse(null);
+    }
+
+    public String printAllNames() {
+        return null;
     }
 }

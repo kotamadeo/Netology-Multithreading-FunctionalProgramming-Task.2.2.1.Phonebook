@@ -33,4 +33,10 @@ class PhonebookTest {
         String result = PHONEBOOK.findByName("Ivan");
         assertNotNull(result, "Произошла ошибка поиска контакта по имени!");
     }
+
+    @Test
+    void printAllNames() {
+        String result = PHONEBOOK.printAllNames();
+        assertNotNull(result, "Произошла ошибка - список контактов пуст");
+    }
 }
