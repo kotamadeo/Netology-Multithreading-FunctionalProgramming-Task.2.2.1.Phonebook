@@ -41,7 +41,7 @@ public class Phonebook {
         return numbers.entrySet()
                 .stream()
                 .map(Objects::toString)
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.joining(".\n"));
     }
 
     @Override
