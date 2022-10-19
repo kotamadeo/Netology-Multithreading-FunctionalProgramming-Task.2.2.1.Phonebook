@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Getter
@@ -15,20 +18,30 @@ public class Phonebook {
     private final Map<String, String> numbers = new HashMap<>();
 
     public int putNumberToPhoneBook(String name, String number) {
-        return 0;
+        numbers.putIfAbsent(name, number);
+        return numbers.size();
     }
 
     public String findByNumber(String number) {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .filter(entry -> number.equals(entry.getValue()))
+                .map(Map.Entry::getKey)
+                .findFirst().orElse(null);
     }
 
     public String findByName(String name) {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .filter(entry -> name.equals(entry.getKey()))
+                .map(Map.Entry::getValue)
+                .findFirst().orElse(null);
     }
 
     public String printAllNames() {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .map(Objects::toString)
+                .collect(Collectors.joining(", "));
     }
-
-
 }
