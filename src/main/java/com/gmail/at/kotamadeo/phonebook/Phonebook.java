@@ -38,6 +38,9 @@ public class Phonebook {
     }
 
     public String printAllNames() {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .map(Objects::toString)
+                .collect(Collectors.joining(", "));
     }
 }
