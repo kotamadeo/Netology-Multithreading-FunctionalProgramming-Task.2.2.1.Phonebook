@@ -20,8 +20,10 @@ public class Phonebook {
     }
 
     public String findByNumber(String number) {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .filter(entry -> number.equals(entry.getValue()))
+                .map(Map.Entry::getKey)
+                .findFirst().orElse(null);
     }
-
-
 }
