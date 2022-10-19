@@ -15,6 +15,9 @@ public class Phonebook {
     private final Map<String, String> numbers = new HashMap<>();
 
     public int putContactToPhonebook(String name, String number) {
+        numbers.putIfAbsent(name, number);
         return numbers.size();
     }
+
+
 }
