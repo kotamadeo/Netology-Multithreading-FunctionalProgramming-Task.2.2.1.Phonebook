@@ -13,4 +13,8 @@ public class Phonebook {
     @NonNull
     private String name;
     private final Map<String, String> numbers = new HashMap<>();
+
+    public int putContactToPhonebook(String name, String number) {
+        return numbers.size();
+    }
 }
