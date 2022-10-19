@@ -27,4 +27,10 @@ class PhonebookTest {
         String result = PHONEBOOK.findByNumber("12345678910");
         assertNotNull(result, "Произошла ошибка поиска контакта по номеру!");
     }
+
+    @Test
+    void findByName() {
+        String result = PHONEBOOK.findByName("Ivan");
+        assertNotNull(result, "Произошла ошибка поиска контакта по имени!");
+    }
 }
