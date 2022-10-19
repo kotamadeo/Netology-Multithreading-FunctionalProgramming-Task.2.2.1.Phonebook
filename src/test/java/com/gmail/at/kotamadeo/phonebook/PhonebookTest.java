@@ -18,7 +18,7 @@ class PhonebookTest {
     }
 
     @Test
-    void putContactToPhonebook() {
+    void putNumberToPhoneBook() {
         assertEquals(SIZE, PHONEBOOK.getNumbers().size(), "Произошла ошибка добавления номера в телефонную книгу");
     }
 
