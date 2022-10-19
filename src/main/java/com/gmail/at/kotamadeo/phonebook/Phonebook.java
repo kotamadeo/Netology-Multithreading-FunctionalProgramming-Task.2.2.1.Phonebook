@@ -28,6 +28,10 @@ public class Phonebook {
     }
 
     public String findByName(String name) {
-        return null;
+        return numbers.entrySet()
+                .stream()
+                .filter(entry -> name.equals(entry.getKey()))
+                .map(Map.Entry::getValue)
+                .findFirst().orElse(null);
     }
 }
