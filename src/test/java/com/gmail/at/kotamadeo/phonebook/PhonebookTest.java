@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class PhonebookTest {
     private static final Phonebook PHONEBOOK = new Phonebook("Тестовая телефонная книга");
@@ -19,5 +20,11 @@ class PhonebookTest {
     @Test
     void putContactToPhonebook() {
         assertEquals(SIZE, PHONEBOOK.getNumbers().size(), "Произошла ошибка добавления номера в телефонную книгу");
+    }
+
+    @Test
+    void findByNumber() {
+        String result = PHONEBOOK.findByNumber("12345678910");
+        assertNotNull(result, "Произошла ошибка поиска контакта по номеру!");
     }
 }
